@@ -21,12 +21,21 @@ const tabletRoutes = require('./routes/tablet');
 const telefoneRoutes = require('./routes/telefone');
 const walktalkRoutes = require('./routes/walk-talk');
 
-app.use ('/acessorio', acessorioRoutes);
+app.use('/acessorio', acessorioRoutes);
 app.use('/teclados', tecladosRoutes);
 app.use('/mouse', mouseRoutes);
 app.use('/usuarios', usuariosRoutes);
-app.use ('/coletor', coletorRoutes);
-
+app.use('/coletor', coletorRoutes);
+app.use('/desktop', desktopRoutes);
+app.use('/impressoras', impressorasRoutes);
+app.use('/leitores', leitoresRoutes);
+app.use('/monito', monitorRoutes);
+app.use('/mouse', mouseRoutes);
+app.use('/projeto', projetorRoutes);
+app.use('/smartphone', smartphoneRoutes);
+app.use('/tablet', tabletRoutes);
+app.use('/telefone', telefoneRoutes);
+app.use('/walktalk', walktalkRoutes);
 // Iniciar o servidor
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
