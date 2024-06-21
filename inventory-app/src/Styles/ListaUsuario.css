@@ -19,3 +19,12 @@
 .error-message {
     color: red;
 }
+
+.table-container {
+    height: calc(100vh - 200px); /* Ajuste a altura conforme necessário */
+    overflow-y: auto;
+}
+
+.table-cell {
+    padding: 8px 10px; /* Ajuste os valores de padding conforme necessário */
+}

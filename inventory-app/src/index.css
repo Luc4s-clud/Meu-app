@@ -23,3 +23,13 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+
+.table-container {
+  height: calc(100vh - 10px); /* Ajuste a altura conforme necessário */
+  overflow-y: auto;
+}
+
+.table-cell {
+  padding: 8px 10px; /* Ajuste os valores de padding conforme necessário */
+}
