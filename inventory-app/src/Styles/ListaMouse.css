@@ -4,13 +4,13 @@
 }
 
 .table-cell {
-    padding: 8px 10px; /* Ajuste os valores de padding conforme necessário */
+    padding: 4px 6px; /* Reduz o padding para deixar os campos mais próximos */
 }
 
 .no-truncate-cell {
     white-space: normal;
     word-wrap: break-word;
-    padding: 8px 3px; /* Ajuste os valores de padding conforme necessário */
+    padding: 4px 6px; /* Reduz o padding para deixar os campos mais próximos */
 }
 
 .modal-style {

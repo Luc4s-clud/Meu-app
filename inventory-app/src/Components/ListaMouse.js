@@ -1,15 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,
     AppBar, Toolbar, Typography, Container, CssBaseline, IconButton, Modal, Box, TextField, Button
 } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon, Add as AddIcon } from '@mui/icons-material';
-import '../Styles/ListaMouse.css'; // Importar o arquivo CSS
+import '../styles/ListaMouse.css'; // Importar o arquivo CSS
 
-const tableStyle = {
-    minWidth: 650, // Defina outros estilos conforme necessário
+const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
 };
+
 const Mouses = () => {
     const [mouses, setMouses] = useState([]);
     const [erro, setErro] = useState('');
@@ -20,9 +29,17 @@ const Mouses = () => {
         Scroll: '', Tipo: '', Conexao: '', Cor: '', SN: '', Marca: '', Modelo: '', Codigo_Barras: '', SETOR: '', FUN_CODIGO: '', Data_Aquisicao: '', Data_Conferencia: '', Garantia_Meses: '', Status: '', Observacao: ''
     });
 
+    const tableContainerRef = useRef(null);
+
     useEffect(() => {
         fetchMouses();
     }, []);
+
+    useEffect(() => {
+        if (tableContainerRef.current) {
+            tableContainerRef.current.scrollTop = tableContainerRef.current.scrollHeight;
+        }
+    }, [mouses]);
 
     const fetchMouses = async () => {
         try {
@@ -123,8 +140,8 @@ const Mouses = () => {
                     Adicionar Mouse
                 </Button>
                 {erro && <Typography color="error">{erro}</Typography>}
-                <TableContainer component={Paper} className="table-container">
-                    <Table sx={tableStyle}>
+                <TableContainer component={Paper} className="table-container" ref={tableContainerRef}>
+                    <Table sx={{ minWidth: 650 }}>
                         <TableHead>
                             <TableRow>
                                 <TableCell className="no-truncate-cell">ID</TableCell>
