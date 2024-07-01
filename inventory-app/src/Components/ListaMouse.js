@@ -5,7 +5,7 @@ import {
     AppBar, Toolbar, Typography, Container, CssBaseline, IconButton, Modal, Box, TextField, Button
 } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon, Add as AddIcon } from '@mui/icons-material';
-import '../styles/ListaMouse.css'; // Importar o arquivo CSS
+import '../Styles/ListaMouse.css'; // Importar o arquivo CSS
 
 const modalStyle = {
     position: 'absolute',
